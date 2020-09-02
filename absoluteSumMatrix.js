@@ -48,3 +48,25 @@ generalSum = absoluteSumMatrixNDim([
  ])
 
  console.log("Sum for square matrix with any dimension: ",generalSum)
+
+
+ const absoluteSumMatrix_reduce = matrix => {
+    const URtoLL = matrix.reduce((acc, curr, idx) => {
+      console.log("acc: ", acc," curr: ",curr, " idx: ",idx," curr[idx]: ",curr[idx])  
+      return curr[matrix.length - 1 - idx] + acc
+    }, 0)
+    
+    const ULtoLR = matrix.reduce((acc, curr, idx) => {
+      return curr[idx] + acc
+    }, 0)
+    
+    return Math.abs(URtoLL) + Math.abs(ULtoLR)
+  }
+
+  sum_reduced =absoluteSumMatrix_reduce([ 
+    [ 1, 3, 4 ],
+    [ -2, -3, -5 ] ,
+    [ 6, 2, 5 ]
+    ])
+
+    console.log("sum reduced: ",sum_reduced)
