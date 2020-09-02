@@ -37,7 +37,7 @@ function absoluteSumMatrixNDim(mat){
         diag1Sum= diag1Sum + mat[i][i]
         diag2Sum = diag2Sum + mat[i][lenOfMatrix-1-i]
     }
-    return diag1Sum + diag2Sum
+    return Math.abs(diag1Sum) + Math.abs(diag2Sum)
 }
 
 generalSum = absoluteSumMatrixNDim([
