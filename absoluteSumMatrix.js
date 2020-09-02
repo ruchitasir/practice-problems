@@ -52,11 +52,12 @@ generalSum = absoluteSumMatrixNDim([
 
  const absoluteSumMatrix_reduce = matrix => {
     const URtoLL = matrix.reduce((acc, curr, idx) => {
-      console.log("acc: ", acc," curr: ",curr, " idx: ",idx," curr[idx]: ",curr[idx])  
+      console.log("acc: ", acc," curr: ",curr, " idx: ",idx," curr[matrix.length - 1 - idx]: ",curr[matrix.length - 1 - idx])  
       return curr[matrix.length - 1 - idx] + acc
     }, 0)
     
     const ULtoLR = matrix.reduce((acc, curr, idx) => {
+        console.log("acc: ", acc," curr: ",curr, " idx: ",idx," curr[idx]: ",curr[idx])  
       return curr[idx] + acc
     }, 0)
     
